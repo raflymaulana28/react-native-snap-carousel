@@ -1,9 +1,11 @@
 // Parallax effect inspired by https://github.com/oblador/react-native-parallax/
 
 import React, { Component } from 'react';
-import { View, ViewPropTypes, Image, Animated, Easing, ActivityIndicator, findNodeHandle } from 'react-native';
+import { View, Image, Animated, Easing, ActivityIndicator, findNodeHandle } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './ParallaxImage.style';
+var stylePropType = require('react-style-proptype');
+
 
 export default class ParallaxImage extends Component {
 
@@ -16,7 +18,7 @@ export default class ParallaxImage extends Component {
         sliderHeight: PropTypes.number, // passed from <Carousel />
         sliderWidth: PropTypes.number, // passed from <Carousel />
         vertical: PropTypes.bool, // passed from <Carousel />
-        containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+        containerStyle: stylePropType,
         dimensions: PropTypes.shape({
             width: PropTypes.number,
             height: PropTypes.number
