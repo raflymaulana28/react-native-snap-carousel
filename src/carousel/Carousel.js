@@ -13,6 +13,8 @@ import {
 } from '../utils/animations';
 
 const IS_IOS = Platform.OS === 'ios';
+var stylePropType = require('react-style-proptype');
+
 
 // Native driver for scroll events
 // See: https://facebook.github.io/react-native/blog/2017/02/14/using-native-driver-for-animated.html
@@ -43,8 +45,8 @@ export default class Carousel extends Component {
         autoplayDelay: PropTypes.number,
         autoplayInterval: PropTypes.number,
         callbackOffsetMargin: PropTypes.number,
-        containerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
-        contentContainerCustomStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+        containerCustomStyle: stylePropType,
+        contentContainerCustomStyle: stylePropType,
         enableMomentum: PropTypes.bool,
         enableSnap: PropTypes.bool,
         firstItem: PropTypes.number,
@@ -61,7 +63,7 @@ export default class Carousel extends Component {
         scrollEnabled: PropTypes.bool,
         scrollInterpolator: PropTypes.func,
         slideInterpolatedStyle: PropTypes.func,
-        slideStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+        slideStyle: stylePropType,
         shouldOptimizeUpdates: PropTypes.bool,
         swipeThreshold: PropTypes.number,
         useScrollView: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
